@@ -1,0 +1,5 @@
+package gotls
+
+func GenerateCA() {
+
+}

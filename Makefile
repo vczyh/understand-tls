@@ -1,4 +1,4 @@
-.PHONY: pre clean openssl-ca openssl-server openssl-client openssl go
+.PHONY: pre clean openssl-ca openssl-server openssl-client openssl go server client
 
 
 pre:
@@ -20,3 +20,9 @@ openssl: openssl-ca openssl-server openssl-client
 
 go:
 	go run ./gotls
+
+server:
+	go run ./server
+
+client:
+	go run ./client

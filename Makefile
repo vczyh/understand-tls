@@ -1,9 +1,11 @@
-.PHONY: pre openssl-ca openssl-server openssl-client openssl
+.PHONY: pre clean openssl-ca openssl-server openssl-client openssl go
 
-all: build
 
 pre:
 	chmod -R +x openssl
+
+clean:
+	rm -rf certs/*
 
 openssl-ca: pre
 	openssl/ca.sh
@@ -15,3 +17,6 @@ openssl-client: pre
 	openssl/client.sh
 
 openssl: openssl-ca openssl-server openssl-client
+
+go:
+	go run ./gotls
